@@ -1,45 +1,47 @@
 import matplotlib.pyplot as plt
-def generowanie_histogramu_z_ograniczonym_zakresem(text,zakres):
-
-    text_zmieniony =list(text.lower())
-    
-    scope = list(zakres.lower())
-    litery=[]
-    ilosc = []
-    for char in text_zmieniony:
-        if (char in scope) and (char in text_zmieniony):
-            x=text_zmieniony.count(char)
-            litery.append(char)
-            ilosc.append(x)
 
 
-    plt.bar(litery, ilosc)
+def GeNeRoWaNiE_HiStOgRaMu_Z_oGrAnIcZoNyM_zAkReSeM(TeXt, zAkReS):
+    TeXt_ZmIeNiOnY = list(TeXt.lower())
+
+    ScOpE = list(zAkReS.lower())
+    LiTeRy = []
+    IlOsC = []
+    for ChAr in TeXt_ZmIeNiOnY:
+        if (ChAr in ScOpE) and (ChAr in TeXt_ZmIeNiOnY):
+            x = TeXt_ZmIeNiOnY.count(ChAr)
+            LiTeRy.append(ChAr)
+            IlOsC.append(x)
+
+    plt.bar(LiTeRy, IlOsC)
     plt.xlabel("Litry")
     plt.ylabel("Ilosc")
     plt.title("Histogram częstości liter")
 
     plt.savefig('histogram_z_zakresem.png')
 
+
 print("Menu: ")
 print("1 - Odczyt tekstu z pliku tekstowego")
 print("2 - Odczyt tekstu wpisanego z klawiatury")
-opcja = int(input("Wybierz opcje z menu: "))
+OpCjA = int(input("Wybierz opcje z menu: "))
 
-while opcja < 1 or opcja > 2:
+while OpCjA < 1 or OpCjA > 2:
     print("Wybrano nieprawidłową opcje !!!")
-    opcja = int(input("Wybierz opcje z menu: "))
+    OpCjA = int(input("Wybierz opcje z menu: "))
 
-if (opcja == 1):
-    scope=input("Wpisz litery których czestotliwość ma być przedstawiona na histogramie: ")
+if (OpCjA == 1):
+    ScOpE = input("Wpisz litery których czestotliwość ma być przedstawiona na histogramie: ")
     with open('tekst.txt', 'r') as file:
-        tekst = file.read()
+        TeKsT = file.read()
 
-    generowanie_histogramu_z_ograniczonym_zakresem(tekst,scope)
+    GeNeRoWaNiE_HiStOgRaMu_Z_oGrAnIcZoNyM_zAkReSeM(TeKsT, ScOpE)
 
 else:
     print("Wprowadź tekst z klawiatury: ")
-    tekst = input("Twój tekst: ")
-    scope=input("Wpisz litery których czestotliwość ma być przedstawiona na histogramie: ")
-    generowanie_histogramu_z_ograniczonym_zakresem(tekst,scope)
+    TeKsT = input("Twój tekst: ")
+    ScOpE = input("Wpisz litery których czestotliwość ma być przedstawiona na histogramie: ")
+    GeNeRoWaNiE_HiStOgRaMu_Z_oGrAnIcZoNyM_zAkReSeM(TeKsT, ScOpE)
 
 print("Operacja została wykonana. Histogram został utworzony")
+
