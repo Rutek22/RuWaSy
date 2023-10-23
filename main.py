@@ -27,13 +27,12 @@ def generowanie_histogramu_z_ograniczonym_zakresem(text,zakres):
     scope = list(zakres)
     litery=[]
     ilosc = []
-    for char in scope:
-        litery.append(char)
-        ilosc.append(1)
     for char in text_zmieniony:
-        if char in litery:
-            index = litery.index(char)
-            ilosc[index] += 1
+        if (char in scope) and (char in text_zmieniony):
+            x=text_zmieniony.count(char)
+            litery.append(char)
+            ilosc.append(x)
+
 
     plt.bar(litery, ilosc)
     plt.xlabel("Litry")
@@ -47,7 +46,7 @@ print("1 - Odczyt tekstu z pliku tekstowego")
 print("2 - Odczyt tekstu wpisanego z klawiatury")
 opcja = int(input("Wybierz opcje z menu: "))
 
-while (opcja != 1) | (opcja != 2):
+while opcja < 1 or opcja > 2:
     print("Wybrano nieprawidłową opcje !!!")
     opcja = int(input("Wybierz opcje z menu: "))
 
