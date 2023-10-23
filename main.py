@@ -7,3 +7,7 @@ def generowanie_histogramu(text):
     for char in text_zmieniony:
         if char not in litery:
             litery.append(char)
+            ilosc.append(1)
+        else:
+            index = litery.index(char)
+            ilosc[index] += 1
