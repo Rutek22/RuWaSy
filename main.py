@@ -27,3 +27,8 @@ with open('tekst.txt', 'r') as file:
     tekst = file.read()
 
 generowanie_histogramu(tekst)
+
+print("Menu: ")
+print("1 - Odczyt tekstu z pliku tekstowego")
+print("2 - Odczyt tekstu wpisanego z klawiatury")
+opcja = int(input("Wybierz opcje z menu: "))
