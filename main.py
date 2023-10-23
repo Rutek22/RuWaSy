@@ -1,30 +1,9 @@
 import matplotlib.pyplot as plt
-def generowanie_histogramu(text):
-
-    text_zmieniony = ''.join(filter(str.isalpha, text)).lower()
-
-    litery = []
-    ilosc = []
-
-    for char in text_zmieniony:
-        if char not in litery:
-            litery.append(char)
-            ilosc.append(1)
-        else:
-            index = litery.index(char)
-            ilosc[index] += 1
-
-    plt.bar(litery, ilosc)
-    plt.xlabel("Litry")
-    plt.ylabel("Ilosc")
-    plt.title("Histogram częstości liter")
-
-    plt.savefig('histogram.png')
 def generowanie_histogramu_z_ograniczonym_zakresem(text,zakres):
 
-    text_zmieniony =list(text)
+    text_zmieniony =list(text.lower())
     
-    scope = list(zakres)
+    scope = list(zakres.lower())
     litery=[]
     ilosc = []
     for char in text_zmieniony:
