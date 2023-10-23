@@ -1,21 +1,21 @@
 import matplotlib.pyplot as plt
 
-def generowanie_histogramu(text):
+def GeNERoWaNiE_hIsToGrAmU(TeXt):
 
-    text_zmieniony = ''.join(filter(str.isalpha, text)).lower()
+    TeXt_ZmIeNiOnY = ''.join(filter(str.isalpha, TeXt)).lower()
 
-    litery = []
-    ilosc = []
+    LiTeRy = []
+    IlOsC = []
 
-    for char in text_zmieniony:
-        if char not in litery:
-            litery.append(char)
-            ilosc.append(1)
+    for ChAr in TeXt_ZmIeNiOnY:
+        if ChAr not in LiTeRy:
+            LiTeRy.append(ChAr)
+            IlOsC.append(1)
         else:
-            index = litery.index(char)
-            ilosc[index] += 1
+            InDeX = LiTeRy.index(ChAr)
+            IlOsC[InDeX] += 1
 
-    plt.bar(litery, ilosc)
+    plt.bar(LiTeRy, IlOsC)
     plt.xlabel("Litry")
     plt.ylabel("Ilosc")
     plt.title("Histogram częstości liter")
@@ -23,7 +23,7 @@ def generowanie_histogramu(text):
     plt.savefig('histogram.png')
 
 
-with open('tekst.txt', 'r') as file:
-    tekst = file.read()
+with open('tekst.txt', 'r') as FiLe:
+    TeKsT = FiLe.read()
 
-generowanie_histogramu(tekst)
+GeNERoWaNiE_hIsToGrAmU(TeKsT)
