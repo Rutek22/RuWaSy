@@ -31,3 +31,16 @@ opcja = int(input("Wybierz opcje z menu: "))
 while opcja != 1 | opcja != 2:
     print("Wybrano nieprawidłową opcje !!!")
     opcja = int(input("Wybierz opcje z menu: "))
+
+if (opcja == 1):
+    with open('tekst.txt', 'r') as file:
+        tekst = file.read()
+
+    generowanie_histogramu(tekst)
+
+else:
+    print("Wprowadź tekst z klawiatury: ")
+    tekst = input("Twój tekst: ")
+    generowanie_histogramu(tekst)
+
+print("Operacja została wykonana. Histogram został utworzony")
