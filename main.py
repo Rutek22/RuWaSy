@@ -27,3 +27,5 @@ with open('tekst.txt', 'r') as file:
     tekst = file.read()
 
 generowanie_histogramu(tekst)
+
+print("Chyba tu jestem")
