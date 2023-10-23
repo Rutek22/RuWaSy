@@ -28,7 +28,7 @@ print("1 - Odczyt tekstu z pliku tekstowego")
 print("2 - Odczyt tekstu wpisanego z klawiatury")
 opcja = int(input("Wybierz opcje z menu: "))
 
-while opcja != 1 | opcja != 2:
+while (opcja != 1) | (opcja != 2):
     print("Wybrano nieprawidłową opcje !!!")
     opcja = int(input("Wybierz opcje z menu: "))
 
